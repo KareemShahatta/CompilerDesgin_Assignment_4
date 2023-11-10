@@ -1,0 +1,64 @@
+{
+  "tests": [
+    {
+      "name": "test_pass_Bool",
+      "run": "mvn -Dtest=PassTestSingle#singleTest -DfileName=src/test/java/compilers/test_programs/pass/Bool.ram23 test",
+      "timeout": 2,
+      "points": 1
+    },
+    {
+      "name": "test_pass_HelloWorld",
+      "run": "mvn -Dtest=PassTestSingle#singleTest -DfileName=src/test/java/compilers/test_programs/pass/HelloWorld.ram23 test",
+      "timeout": 2,
+      "points": 1
+    },
+    {
+      "name": "test_pass_InfiniteLoop",
+      "run": "mvn -Dtest=PassTestSingle#singleTest -DfileName=src/test/java/compilers/test_programs/pass/InfiniteLoop.ram23 test",
+      "timeout": 2,
+      "points": 1
+    },
+    {
+      "name": "test_pass_LinearSearch",
+      "run": "mvn -Dtest=PassTestSingle#singleTest -DfileName=src/test/java/compilers/test_programs/pass/LinearSearch.ram23 test",
+      "timeout": 2,
+      "points": 1
+    },
+    {
+      "name": "test_pass_Logical",
+      "run": "mvn -Dtest=PassTestSingle#singleTest -DfileName=src/test/java/compilers/test_programs/pass/Logical.ram23 test",
+      "timeout": 2,
+      "points": 1
+    },
+    {
+      "name": "test_pass_Program2",
+      "run": "mvn -Dtest=PassTestSingle#singleTest -DfileName=src/test/java/compilers/test_programs/pass/Program2.ram23 test",
+      "timeout": 2,
+      "points": 1
+    },
+    {
+      "name": "test_fail_Array",
+      "run": "mvn -Dtest=FailTestSingle#singleTest -DfileName=src/test/java/compilers/test_programs/fail/Array.ram23 test",
+      "timeout": 2,
+      "points": 1
+    },
+    {
+      "name": "test_fail_ParsePass2",
+      "run": "mvn -Dtest=FailTestSingle#singleTest -DfileName=src/test/java/compilers/test_programs/fail/ParsePass2.ram23 test",
+      "timeout": 2,
+      "points": 1
+    },
+    {
+      "name": "test_fail_pass1",
+      "run": "mvn -Dtest=FailTestSingle#singleTest -DfileName=src/test/java/compilers/test_programs/fail/pass1.ram23 test",
+      "timeout": 2,
+      "points": 1
+    },
+    {
+      "name": "test_fail_Sigma",
+      "run": "mvn -Dtest=FailTestSingle#singleTest -DfileName=src/test/java/compilers/test_programs/fail/Sigma.ram23 test",
+      "timeout": 2,
+      "points": 1
+    }
+  ]
+}
