@@ -20,4 +20,17 @@ public class FormalList {
    public int size() { 
       return list.size(); 
    }
+
+   @Override
+   public String toString()
+   {
+      StringBuilder outputString = new StringBuilder();
+
+      for(Object formal : list)
+      {
+         outputString.append(formal.toString()).append(",");
+      }
+
+      return outputString.toString();
+   }
 }

@@ -37,14 +37,14 @@ public class Ram23Compiler {
             System.out.println("Begin print of symbol table");
             System.out.println(v.getSymTab());
             System.out.println("End print of symbol table");
-
-
-            // perform type checking
-            root.accept(new TypeCheckVisitor(v.getSymTab()));
-            if (v.getSymTab().anyErrors())
-                throw new ParseException ("SA error detected");
-            System.out.println("Semantic Analysis: Type Checking complete");        
-                    
+//
+//
+//            // perform type checking
+//            root.accept(new TypeCheckVisitor(v.getSymTab()));
+//            if (v.getSymTab().anyErrors())
+//                throw new ParseException ("SA error detected");
+//            System.out.println("Semantic Analysis: Type Checking complete");
+//
         }   
     }
 }
