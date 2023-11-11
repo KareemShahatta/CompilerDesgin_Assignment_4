@@ -23,4 +23,11 @@ public class RamVariable extends VarDecl
     {
         return type;
     }
+
+
+    @Override
+    public String toString()
+    {
+        return "class " + t.getClass().getCanonicalName()  + " " + i.toString();
+    }
 }

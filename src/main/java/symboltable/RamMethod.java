@@ -2,7 +2,6 @@ package symboltable;
 import syntaxtree.*;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Iterator;
 
 public class RamMethod extends MethodDecl
@@ -85,7 +84,7 @@ public class RamMethod extends MethodDecl
     public boolean addVar(String string, Type type) {
         if(!containsVar(string))
         {
-            vl.addElement(new VarDecl(type, new Identifier(string)));
+            vl.addElement(new RamVariable(string, type));
             return true;
         }
 
@@ -98,7 +97,7 @@ public class RamMethod extends MethodDecl
         {
             if(vl.elementAt(i).i.toString().equals(string))
             {
-                return (RamVariable) vl.elementAt(i);
+                return new RamVariable(vl.elementAt(i).i.toString() ,  vl.elementAt(i).t);
             }
         }
 
@@ -112,5 +111,39 @@ public class RamMethod extends MethodDecl
     }
     public Type type() {
         return type;
+    }
+
+
+    @Override
+    public String toString() {
+        String METHOD_CLASS_SPACE = "\t\t\t";
+        String METHOD_CLASS_PRAM_LOCAL_SPACE = "\n\t\t\t\t";
+        String METHOD_CLASS_PRAM_LOCAL_CLASS_SPACE = "\n\t\t\t\t\t";
+
+        StringBuilder outputString = new StringBuilder();
+        outputString.append(METHOD_CLASS_SPACE).append("class ").append(t.getClass().getCanonicalName()).append(" ").append(i.toString());
+        outputString.append(METHOD_CLASS_PRAM_LOCAL_SPACE).append("Params:");
+
+        for(String param : fl.toString().split(","))
+        {
+            if(!param.isEmpty())
+            {
+                outputString.append(METHOD_CLASS_PRAM_LOCAL_CLASS_SPACE).append(param);
+            }
+        }
+
+        outputString.append(METHOD_CLASS_PRAM_LOCAL_SPACE).append("Locals:");
+
+        for(String var : vl.toString().split(","))
+        {
+            if(!var.isEmpty())
+            {
+                outputString.append(METHOD_CLASS_PRAM_LOCAL_CLASS_SPACE).append(var);
+            }
+        }
+
+        outputString.append("\n");
+
+        return outputString.toString();
     }
 }

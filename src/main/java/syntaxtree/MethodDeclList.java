@@ -20,20 +20,4 @@ public class MethodDeclList {
    public int size() { 
       return list.size(); 
    }
-
-   @Override
-   public String toString()
-   {
-     /* String METHOD_CLASS_SPACE = "\n\t\t\t";
-
-      StringBuilder outputString = new StringBuilder();
-
-      for(MethodDecl method : list)
-      {
-         outputString.append(METHOD_CLASS_SPACE).append(method.toString());
-      }
-
-      return outputString.toString();*/
-      return null;
-   }
 }

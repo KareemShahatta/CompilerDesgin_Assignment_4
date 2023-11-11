@@ -18,10 +18,4 @@ public class VarDecl
   public Type accept(TypeVisitor v) {
     return v.visit(this);
   }
-
-  @Override
-  public String toString()
-  {
-    return "class " + t.getClass().getCanonicalName()  + " " + i.toString();
-  }
 }
