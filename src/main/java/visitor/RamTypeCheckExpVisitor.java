@@ -1,12 +1,43 @@
 package visitor;
 
 import symboltable.RamMethod;
-import syntaxtree.Call;
-import syntaxtree.IdentifierType;
-import syntaxtree.Type;
+import syntaxtree.*;
 
 public class RamTypeCheckExpVisitor extends TypeCheckExpVisitor
 {
+    @Override
+    public Type visit(Or n)
+    {
+        if (!(n.e1.accept(this) instanceof BooleanType))
+        {
+            System.out.println("Left side of Or must be of type integer");
+            System.exit(-1);
+        }
+
+        if (!(n.e2.accept(this) instanceof BooleanType))
+        {
+            System.out.println(n.e2);
+            System.out.println("Right side of Or must be of type integer");
+            System.exit(-1);
+        }
+        return new BooleanType();
+    }
+
+
+    // Exp e1,e2;
+    public Type visit(Equals n) {
+        if (!(n.e1.accept(this) instanceof IntegerType))
+        {
+            System.out.println("Left side of Equal must be of type integer");
+            System.exit(-1);
+        }
+        if (!(n.e2.accept(this) instanceof IntegerType)) {
+            System.out.println("Right side of Equal must be of type integer");
+            System.exit(-1);
+        }
+        return new BooleanType();
+    }
+
     @Override
     public Type visit(Call n)
     {

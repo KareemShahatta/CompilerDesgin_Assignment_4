@@ -47,9 +47,8 @@ public class RamTypeCheckVisitor extends TypeCheckVisitor
     @Override
     public void visit(While n)
     {
-        if (!(n.e.accept(new TypeCheckExpVisitor()) instanceof BooleanType))
+        if (!(n.e.accept(new RamTypeCheckExpVisitor()) instanceof BooleanType))
         {
-            System.out.println(n.e.accept(new TypeCheckExpVisitor()));
             System.out.println("The condition of while must be of type boolean");
             System.exit(-1);
         }
