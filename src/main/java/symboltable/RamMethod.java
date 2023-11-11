@@ -6,13 +6,11 @@ import java.util.Iterator;
 
 public class RamMethod extends MethodDecl
 {
-    String string_identifier;
-    Identifier identifier;
+    String identifier;
     Type type;
     public RamMethod(String string , Type type) {
         super(type, new Identifier(string), new FormalList() , new VarDeclList() , new StatementList() , null);
-        this.identifier = new Identifier(string);
-        this.string_identifier = string;
+        this.identifier = string;
 
         this.type = type;
     }
@@ -107,7 +105,7 @@ public class RamMethod extends MethodDecl
 
 
     public String getId() {
-        return string_identifier;
+        return identifier;
     }
     public Type type() {
         return type;
