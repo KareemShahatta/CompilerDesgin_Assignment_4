@@ -40,7 +40,7 @@ public class Ram23Compiler {
 
 
             // perform type checking
-            root.accept(new RamTypeCheckVisitor(v.getSymTab()));
+            root.accept(new TypeCheckVisitor(v.getSymTab()));
             if (v.getSymTab().anyErrors())
                 throw new ParseException ("SA error detected");
             System.out.println("Semantic Analysis: Type Checking complete");
